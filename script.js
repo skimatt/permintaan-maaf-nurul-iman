@@ -873,7 +873,7 @@ function triggerCelebration() {
       "Aku udah buka dan baca semua isi website permintaan maafmu untuk Nurul Iman. Aku tersentuh banget dengan ketulusanmu dan aku udah maafin kamu 🥰\n\n" +
       "Tapi ingat janjimu ya: Prioritaskan waktu buat aku, kontrol emosimu, dan selalu berbicara dengan lembut! Sekarang giliran kamu tepatin janjimu dan traktir aku! 🌸💍"
     );
-    waBtn.href = `https://api.whatsapp.com/send?phone=62822394349489&text=${message}`;
+    waBtn.href = `https://api.whatsapp.com/send?phone=6282239434989&text=${message}`;
   }
 }
 
