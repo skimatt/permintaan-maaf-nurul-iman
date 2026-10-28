@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Untuk Nurul Iman &bull; Luxury Romantic Letter 💌</title>
+  <meta name="description" content="Surat cinta dan permohonan maaf tulus bergaya Luxury Romantic Letter untuk Nurul Iman yang sangat cantik dan menawan.">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Great Vibes, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Three.js (r128) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="luxury-app">
+
+  <!-- Ambient 3D Three.js Canvas (Particle Heart, Gold Stardust, Floating Lanterns) -->
+  <div id="three-container" class="three-canvas-bg"></div>
+
+  <!-- 2D Soft Heart & Petal Canvas -->
+  <canvas id="petalsCanvas"></canvas>
+
+  <!-- Luxury Ambient Radial Glows (Burgundy, Pastel Pink, Warm Gold) -->
+  <div class="ambient-glow-layer">
+    <div class="glow-sphere glow-burgundy"></div>
+    <div class="glow-sphere glow-gold"></div>
+    <div class="glow-sphere glow-pastel"></div>
+  </div>
+
+  <!-- Background Music Audio (Lana Del Rey - The Other Woman) -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="Assets/The%20Other%20Woman%20-%20Lana%20Del%20Rey.mp3" type="audio/mpeg">
+    <source src="Assets/The Other Woman - Lana Del Rey.mp3" type="audio/mpeg">
+    <source src="Assets/music.wav" type="audio/wav">
+  </audio>
+
+  <!-- Floating Minimalist Gold Music Control -->
+  <button id="musicToggleBtn" class="floating-audio-pill" onclick="toggleMusic()" aria-label="Kontrol Musik" title="Putar / Jeda Musik">
+    <div class="mini-soundwave">
+      <span></span><span></span><span></span>
+    </div>
+    <i class="fa-solid fa-music music-note-icon"></i>
+  </button>
+
+  <!-- Main Symmetrical 16:9 Viewport Container -->
+  <div class="screen-canvas-wrapper">
+    <main class="luxury-main">
+
+      <!-- ==============================================================
+           STAGE 1: LUXURY ROMANTIC LETTER (SYMMETRICAL 16:9 HERO)
+           ============================================================== -->
+      <section id="stage-1" class="luxury-stage active">
+        <div class="luxury-card hero-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          
+          <!-- Top Royal Emblem -->
+          <div class="hero-header-block">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-crown"></i>
+                <span>SURAT CINTA & PERMINTAAN MAAF</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+
+            <p class="hero-pretitle">DITUJUKAN KHUSUS UNTUK BIDADARIKU</p>
+            <h1 class="hero-recipient-name gold-foil-text">Nurul Iman</h1>
+            <p class="hero-tagline">
+              "Wanita paling cantik, paling anggun, dan paling menawan di seluruh semestaku..."
+            </p>
+          </div>
+
+          <!-- Realistic 3D Envelope (Centered Focal Point) -->
+          <div class="realistic-envelope-area">
+            <div class="envelope-3d-box" id="envelopeToy" onclick="openEnvelope()">
+              <!-- Internal Letter Sliding Out -->
+              <div class="inner-parchment-letter">
+                <div class="parchment-stamp">💌</div>
+                <p class="parchment-cursive">"Aku sangat menyesali kesalahanku dan ingin meminta maaf dari lubuk hatiku..."</p>
+                <span class="parchment-sig">— Yang Selalu Menyayangimu</span>
+              </div>
+
+              <!-- Base & Flaps of Realistic Envelope -->
+              <div class="env-pocket-back"></div>
+              <div class="env-pocket-left"></div>
+              <div class="env-pocket-right"></div>
+              <div class="env-pocket-bottom"></div>
+              <div class="env-pocket-top-flap" id="envelopeFlap"></div>
+
+              <!-- Realistic Burgundy & Gold Wax Seal -->
+              <div class="realistic-wax-seal" id="waxSealBtn" onclick="openEnvelope()" role="button" tabindex="0">
+                <div class="seal-inner-ring">
+                  <span class="seal-heart-icon">💖</span>
+                  <span class="seal-caption-text">BUKA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Symmetrical Bottom CTA & Hint -->
+          <div class="hero-bottom-actions">
+            <p class="cta-gentle-hint">
+              <i class="fa-solid fa-hand-pointer pulse-hand"></i>
+              Ketuk segel wax di atas atau tekan tombol untuk membuka isi hatiku
+            </p>
+
+            <button class="luxury-gold-btn" id="openLetterBtn" onclick="openEnvelope()">
+              <span class="btn-shine"></span>
+              <span class="btn-label-text">Buka Surat Cinta Untuk Nurul Iman</span>
+              <i class="fa-solid fa-arrow-right-long btn-icon-arrow"></i>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 2: THE SINCERE CONFESSION (IVORY & BURGUNDY PARCHMENT)
+           ============================================================== -->
+            <!-- ==============================================================
+           STAGE 2: THE SINCERE CONFESSION (DECORATED LUXURY PARCHMENT)
+           ============================================================== -->
+      <section id="stage-2" class="luxury-stage">
+        <div class="luxury-card confession-master-card">
+          
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          <!-- Section Title Wrap -->
+          <div class="section-title-wrap">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-feather-pointed"></i>
+                <span>BAB II &bull; DARI LUBUK HATIKU YANG PALING DALAM</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text">
+              "Maafkan Aku yang Terlalu Sibuk & Sering Emosi..."
+            </h2>
+            <p class="section-subtitle">
+              Sebuah pengakuan tulus, penyesalan mendalam, dan janji perubahan untuk bidadariku
+            </p>
+          </div>
+
+          <!-- Featured Decorative Hero Box: Nurul's Portrait with Golden Wax Seal -->
+          <div class="confession-hero-decoration">
+            <div class="confession-portrait-card">
+              <div class="portrait-clip-pin">✦</div>
+              <div class="portrait-frame-inner">
+                <img src="Assets/Foto/IMG_2176.JPG" alt="Nurul Iman Bidadariku" class="confession-hero-img">
+              </div>
+              <div class="portrait-caption-label">
+                <span class="flower-sprig-left">🌸</span>
+                <span>Nurul Iman — Bidadari Terindah yang Hatiku Lukai</span>
+                <span class="flower-sprig-right">🌸</span>
+              </div>
+            </div>
+
+            <!-- Realistic Apology Wax Seal Stamp -->
+            <div class="apology-seal-badge">
+              <div class="seal-ring-outer">
+                <div class="seal-content-text">
+                  <span class="seal-icon">🕊️</span>
+                  <strong>PERMINTAAN MAAF</strong>
+                  <small>DARI LUBUK HATI</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Whisper Voice Regret Note -->
+          <div class="whisper-note-box">
+            <div class="whisper-header">
+              <i class="fa-solid fa-heart-pulse pulse-heart-anim"></i>
+              <span>Ungkapan Hati yang Paling Jujur:</span>
+            </div>
+            <p class="whisper-text" id="whisperQuote">
+              "Nurul sayang, aku sadar betapa egoisnya aku. Kamu pantas diperlakukan seperti ratu, bukan diabaikan atau disikapi dengan kasar. Tolong beri aku kesempatan untuk memperbaikinya... 🥺"
+            </p>
+            <button class="whisper-action-btn" onclick="playHeartWhisper()">
+              <i class="fa-solid fa-volume-high"></i>
+              <span>Dengarkan Bisikan Maafku (Klik Disini)</span>
+            </button>
+          </div>
+
+          <!-- Parchment Confession Cards with Rich Ornaments & Drop Caps -->
+          <div class="confession-scroll-container">
+            
+            <!-- Confession 1 -->
+            <div class="parchment-item ornate-card">
+              <div class="ornate-card-border-top"></div>
+              <div class="parchment-header-row">
+                <div class="parchment-badge-pill">
+                  <span class="parchment-icon">⏳</span>
+                  <span class="badge-tag">KESALAHAN PERTAMA</span>
+                </div>
+                <h3>Tentang Kurangnya Waktu Bersamamu</h3>
+              </div>
+              
+              <div class="parchment-body-content">
+                <p>
+                  <span class="illuminated-drop-cap">A</span>ku sangat menyesali kebodohanku akhir-akhir ini. Aku terlalu sering asyik dan tenggelam dalam kesibukan bersama teman-temanku, hingga lupa bahwa ada wanita paling berharga yang selalu menunggu kabar dan rindu akan kehadiranku.
+                </p>
+                <p class="mt-2">
+                  Padahal, bidadari secantik dan sebaik Nurul Iman berhak mendapatkan perhatian utama dan waktu terbaik dariku, bukan sekadar waktu sisa. Aku sangat menyesal telah membuatmu merasa dinomorduakan.
+                </p>
+              </div>
+
+              <!-- Commitment Chip -->
+              <div class="confession-commitment-chip">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Komitmenku:</strong> Wajib memprioritaskan Nurul di atas kumpul teman dan selalu memberi kabar tanpa diminta.</span>
+              </div>
+            </div>
+
+            <!-- Confession 2 -->
+            <div class="parchment-item ornate-card">
+              <div class="ornate-card-border-top"></div>
+              <div class="parchment-header-row">
+                <div class="parchment-badge-pill">
+                  <span class="parchment-icon">🕊️</span>
+                  <span class="badge-tag">KESALAHAN KEDUA</span>
+                </div>
+                <h3>Tentang Sikap Kasar & Kontrol Emosi</h3>
+              </div>
+
+              <div class="parchment-body-content">
+                <p>
+                  <span class="illuminated-drop-cap">H</span>atiku hancur setiap kali teringat pernah meninggikan suara atau bersikap keras kepala dan kasar padamu saat emosiku sedang tidak terkontrol. Kamu adalah wanita yang begitu lembut, tulus, dan penyayang. Kamu tidak pernah pantas menerima perlakuan seperti itu.
+                </p>
+                <p class="mt-2">
+                  Seharusnya akulah yang menjadi pelindung dan tempatmu merasa aman, bukan malah menjadi sumber air matamu. Aku memohon maaf dari lubuk hatiku yang terdalam atas setiap kata yang pernah menyakiti hatimu.
+                </p>
+              </div>
+
+              <!-- Commitment Chip -->
+              <div class="confession-commitment-chip">
+                <i class="fa-solid fa-circle-check"></i>
+                <span><strong>Komitmenku:</strong> Belajar mengontrol emosi 100%, selalu menarik napas, dan berbicara dengan kelembutan penuh kasih.</span>
+              </div>
+            </div>
+
+            <!-- Confession 3 -->
+            <div class="parchment-item ornate-card highlight">
+              <div class="ornate-card-border-top"></div>
+              <div class="parchment-header-row">
+                <div class="parchment-badge-pill gold">
+                  <span class="parchment-icon">💍</span>
+                  <span class="badge-tag">KESADARAN HATI</span>
+                </div>
+                <h3>Nurul Adalah Prioritas Terbesarku</h3>
+              </div>
+
+              <div class="parchment-body-content">
+                <p>
+                  <span class="illuminated-drop-cap">K</span>ehilangan senyuman manismu dan melihatmu bersedih karena perbuatanku adalah hal yang paling menyakitkan bagiku. Aku menyadari sepenuhnya bahwa hidupku hampa tanpa kehangatan dan cintamu.
+                </p>
+                <p class="mt-2">
+                  Nurul Iman, kamu adalah hadiah terindah dari Tuhan untukku. Aku berjanji akan membuktikan perubahan ini dalam setiap tindakan nyataku mulai hari ini dan seterusnya.
+                </p>
+              </div>
+
+              <!-- Commitment Chip -->
+              <div class="confession-commitment-chip gold">
+                <i class="fa-solid fa-heart"></i>
+                <span><strong>Janji Suci:</strong> Menjaga hatimu, membahagiakanmu, dan tak akan pernah mengulangi kesalahan ini lagi.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Romantic Floral Calligraphy Divider -->
+          <div class="calligraphy-divider">
+            <span class="flourish-left">❧ ✦ ❧</span>
+            <span class="flourish-quote">"Senyuman Nurul adalah bahagiaku yang abadi"</span>
+            <span class="flourish-right">❧ ✦ ❧</span>
+          </div>
+
+          <!-- Symmetrical Bottom Navigation -->
+          <div class="card-navigation-row">
+            <button class="luxury-ghost-btn" onclick="goToStage(1)">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Kembali</span>
+            </button>
+            <button class="luxury-gold-btn" onclick="goToStage(3)">
+              <span class="btn-shine"></span>
+              <span>Lihat Jejak Waktu & Stopwatch Cinta</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 3: LIVE LOVE STOPWATCH & MILESTONES (SINCE MAY 5, 2023)
+           ============================================================== -->
+      <section id="stage-3" class="luxury-stage">
+        <div class="luxury-card stopwatch-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          
+          <div class="section-title-wrap">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <span>BAB III &bull; JEJAK WAKTU BERSAMA NURUL IMAN</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text">
+              "Setiap Detik Bersama Nurul Adalah Anugerah Terindah"
+            </h2>
+            <p class="section-subtitle">
+              Terhitung sejak hari pertama kisah cinta kita bersemi: <strong>5 Mei 2023</strong>
+            </p>
+          </div>
+
+          <!-- Live Dynamic Stopwatch Display -->
+          <div class="stopwatch-luxury-box">
+            <div class="stopwatch-header-row">
+              <span class="stopwatch-pulse-icon">
+                <i class="fa-solid fa-heart-pulse pulse-heart-anim"></i>
+              </span>
+              <div class="stopwatch-header-text">
+                <h3 class="sw-inner-title">Waktu Berjalan Bersamamu</h3>
+                <p class="sw-inner-sub">Detik demi detik yang tak ternilai harganya</p>
+              </div>
+            </div>
+            
+            <div class="stopwatch-counter-grid">
+              <div class="stopwatch-counter-tile">
+                <div class="tile-number-box">
+                  <span class="counter-num" id="swDays">1272</span>
+                </div>
+                <span class="counter-unit-label">HARI</span>
+              </div>
+              <div class="stopwatch-counter-tile">
+                <div class="tile-number-box">
+                  <span class="counter-num" id="swHours">00</span>
+                </div>
+                <span class="counter-unit-label">JAM</span>
+              </div>
+              <div class="stopwatch-counter-tile">
+                <div class="tile-number-box">
+                  <span class="counter-num" id="swMins">00</span>
+                </div>
+                <span class="counter-unit-label">MENIT</span>
+              </div>
+              <div class="stopwatch-counter-tile">
+                <div class="tile-number-box pulse-active">
+                  <span class="counter-num" id="swSecs">00</span>
+                </div>
+                <span class="counter-unit-label">DETIK</span>
+              </div>
+            </div>
+
+            <!-- Total stats row -->
+            <div class="stopwatch-stats-row">
+              <div class="sw-stat-chip">
+                <i class="fa-solid fa-heart"></i>
+                <span>Total: <strong id="swTotalSeconds">109,900,000+</strong> Detik Menyayangimu</span>
+              </div>
+              <div class="sw-stat-chip">
+                <i class="fa-solid fa-sun"></i>
+                <span><strong id="swTotalDays">1,272</strong> Hari Nurul Menghiasi Duniaku</span>
+              </div>
+            </div>
+
+            <!-- Interactive Heartbeat Button -->
+            <div class="stopwatch-action-wrap">
+              <button class="luxury-gold-btn heartbeat-action-btn" onclick="sendHeartPulse()">
+                <span class="btn-shine"></span>
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>Kirim Detak Jantung Cinta ke Hatimu (Klik) 💓</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Milestones Timeline Cards -->
+          <div class="milestones-row">
+            <div class="milestone-card">
+              <div class="milestone-badge">05 MEI 2023</div>
+              <h4>Awal Kisah Indah Bersemi</h4>
+              <p>Hari di mana semestaku berubah menjadi jauh lebih indah, hangat, dan bermakna saat bidadari secantik Nurul Iman hadir dalam hidupku.</p>
+            </div>
+            <div class="milestone-card">
+              <div class="milestone-badge">PERJALANAN KITA</div>
+              <h4>Ribuan Tawa & Pelajaran Hidup</h4>
+              <p>Menemani setiap langkahmu, memahami satu sama lain, dan menyadari bahwa Nurul Iman adalah rumah ternyaman yang selalu ingin kupulangi.</p>
+            </div>
+            <div class="milestone-card highlight">
+              <div class="milestone-badge">HARI INI & SETERUSNYA</div>
+              <h4>Komitmen & Janji Perubahan</h4>
+              <p>Belajar dari kesalahanku, memprioritaskan waktuku sepenuhnya untukmu, dan menjaga senyuman manis bidadariku untuk selamanya.</p>
+            </div>
+          </div>
+
+          <!-- Symmetrical Bottom Navigation -->
+          <div class="card-navigation-row">
+            <button class="luxury-ghost-btn" onclick="goToStage(2)">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Kembali</span>
+            </button>
+            <button class="luxury-gold-btn" onclick="goToStage(4)">
+              <span class="btn-shine"></span>
+              <span>Buka Galeri 34 Foto & Buket Bunga</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 4: PESONA NURUL IMAN & VIRTUAL FLOWER GARDEN
+           ============================================================== -->
+      <section id="stage-4" class="luxury-stage">
+        <div class="luxury-card gallery-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          
+          <div class="section-title-wrap">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-spa"></i>
+                <span>BAB IV &bull; PESONA BIDADARI & BUNGA CINTA</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text">
+              "Koleksi Senyuman Paling Menawan di Semestaku"
+            </h2>
+            <p class="section-subtitle">
+              34 Potret Keanggunan Nurul Iman yang Selalu Menggetarkan Hatiku...
+            </p>
+          </div>
+
+          <!-- Virtual Flower Bouquet Toy Arena -->
+          <div class="flower-interactive-toy-box">
+            <div class="flower-counter-pill">
+              <i class="fa-solid fa-seedling flower-seedling-icon"></i>
+              <span class="counter-label-text">Buket Bunga Kasih Sayang:</span>
+              <span id="flowerCount" class="counter-digital-num">0</span>
+              <span class="counter-unit-text">Tangkai Mawar Emas</span>
+            </div>
+
+            <p class="flower-toy-hint">
+              Ketuk tombol bunga di bawah ini berkali-kali untuk merangkai buket cinta untuk Nurul! 🌹✨
+            </p>
+
+            <button id="tapFlowerBtn" class="luxury-flower-click-btn" onclick="tapFlower()">
+              <span class="flower-btn-icon">💐</span>
+              <span class="flower-btn-label">Petik Bunga Cinta Untuk Nurul</span>
+              <span class="flower-btn-sparkle">✨</span>
+            </button>
+          </div>
+
+          <!-- Gallery Control & Layout Switcher -->
+          <div class="gallery-controls-toolbar">
+            <span class="gallery-count-indicator">
+              <i class="fa-solid fa-camera-retro"></i>
+              <span>34 Foto Lengkap Nurul Iman</span>
+            </span>
+            
+            <button id="toggleGalleryViewBtn" class="view-switch-btn" onclick="toggleGalleryView()">
+              <i class="fa-solid fa-table-cells"></i>
+              <span id="galleryViewModeText">Ubah Tampilan: Grid Rapi</span>
+            </button>
+          </div>
+
+          <!-- Complete 34 Polaroid Gallery Board -->
+          <div class="polaroid-gallery-board" id="polaroidBoard">
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(0)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2175.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Senyuman Nurul yang Selalu Menyejukkan Hati 💖</p>
+                <span class="polaroid-date-stamp">01 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(1)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2176.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Tatapan Anggun & Penuh Kasih ✨</p>
+                <span class="polaroid-date-stamp">02 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(2)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2178.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Bidadariku Paling Cantik 🌹</p>
+                <span class="polaroid-date-stamp">03 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(3)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2181.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Pesonamu yang Tiada Duanya 🌸</p>
+                <span class="polaroid-date-stamp">04 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(4)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2183.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Cantik Sempurna Luar & Dalam 💍</p>
+                <span class="polaroid-date-stamp">05 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(5)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6543.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Detik-Detik Berharga Berdua 🥰</p>
+                <span class="polaroid-date-stamp">06 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(6)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6544.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Genggaman Tangan yang Menenangkan 🕊️</p>
+                <span class="polaroid-date-stamp">07 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(7)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6545.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Saat Waktu Terasa Begitu Indah 💫</p>
+                <span class="polaroid-date-stamp">08 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(8)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6553.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Senyum Manismu yang Bikin Candu 🌷</p>
+                <span class="polaroid-date-stamp">09 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(9)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6671.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Paling Menawan di Segala Suasana ✨</p>
+                <span class="polaroid-date-stamp">10 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(10)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6684.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Keanggunan yang Memikat Jiwa 👑</p>
+                <span class="polaroid-date-stamp">11 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(11)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6689.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Menatap Masa Depan Bersamamu 💖</p>
+                <span class="polaroid-date-stamp">12 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(12)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6697.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Bahagia Sederhana Namun Abadi 🌹</p>
+                <span class="polaroid-date-stamp">13 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(13)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6749.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Tawa Lepas Penuh Kebahagiaan 🌸</p>
+                <span class="polaroid-date-stamp">14 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(14)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6750.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Ceria yang Menghangatkan Hariku 🥰</p>
+                <span class="polaroid-date-stamp">15 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(15)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6753.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Setiap Detik Bersamamu Sangat Berarti 💍</p>
+                <span class="polaroid-date-stamp">16 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(16)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6755.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Kekasih Terbaik di Dunia 💐</p>
+                <span class="polaroid-date-stamp">17 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(17)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_7477.JPEG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Momen Spesial yang Tak Terlupa 💖</p>
+                <span class="polaroid-date-stamp">18 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(18)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_7928.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Langkah Kita Bersama 🕊️</p>
+                <span class="polaroid-date-stamp">19 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(19)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_8604.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Keindahan yang Begitu Abadi ✨</p>
+                <span class="polaroid-date-stamp">20 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(20)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_0071.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Senyuman Manis yang Kurindukan 🌸</p>
+                <span class="polaroid-date-stamp">21 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(21)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_0404.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Kelembutan Jiwa & Parasmu 🌷</p>
+                <span class="polaroid-date-stamp">22 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(22)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_0529.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Mata Cantik yang Selalu Kucintai 🌹</p>
+                <span class="polaroid-date-stamp">23 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(23)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_2393.PNG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Kenangan Manis yang Tersimpan Rapi 💖</p>
+                <span class="polaroid-date-stamp">24 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(24)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_4240.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Cahaya Indah di Setiap Hariku ✨</p>
+                <span class="polaroid-date-stamp">25 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(25)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_4241.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Senyum Teduh Penghapus Lelah 🥰</p>
+                <span class="polaroid-date-stamp">26 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(26)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_4242.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Paras Anggun Bidadari Hatiku 🌸</p>
+                <span class="polaroid-date-stamp">27 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(27)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_5992.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Selalu Mempesona di Setiap Sudut 💐</p>
+                <span class="polaroid-date-stamp">28 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(28)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6772.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Hati yang Selalu Tertuju Padamu 💍</p>
+                <span class="polaroid-date-stamp">29 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(29)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_6951.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Manisnya Hari Bersamamu 💖</p>
+                <span class="polaroid-date-stamp">30 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(30)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_9169.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Wajah Cantik Kesayanganku 🌹</p>
+                <span class="polaroid-date-stamp">31 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-right" onclick="openPhotoModalIndex(31)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_9171.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Tatapan Paling Tulus & Lembut 🕊️</p>
+                <span class="polaroid-date-stamp">32 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-center" onclick="openPhotoModalIndex(32)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_9172.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Bidadari yang Selalu Kusayangi 🌸</p>
+                <span class="polaroid-date-stamp">33 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+            <div class="polaroid-frame-card tilt-left" onclick="openPhotoModalIndex(33)">
+              <div class="polaroid-photo-wrapper">
+                <img src="Assets/Foto/IMG_9186.JPG" alt="Nurul Iman" loading="lazy">
+                <div class="polaroid-gold-pin">✦</div>
+              </div>
+              <div class="polaroid-caption-bottom">
+                <p class="polaroid-handwritten-note">Cinta Abadi untuk Nurul Iman 💖</p>
+                <span class="polaroid-date-stamp">34 / 34 &bull; NURUL IMAN</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Bottom Navigation -->
+          <div class="card-navigation-row">
+            <button class="luxury-ghost-btn" onclick="goToStage(3)">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Kembali</span>
+            </button>
+            <button class="luxury-gold-btn" onclick="goToStage(5)">
+              <span class="btn-shine"></span>
+              <span>Masuk ke Ruang Mainan Cinta</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 5: INTERACTIVE LOVE TOYS & OFFICIAL APOLOGY CONTRACT
+           ============================================================== -->
+      <section id="stage-5" class="luxury-stage">
+        <div class="luxury-card play-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          
+          <div class="section-title-wrap">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>BAB V &bull; RUANG MAINAN & KOMITMEN CINTA</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text">
+              "Taman Mainan Khusus Untuk Menghibur Nurul"
+            </h2>
+            <p class="section-subtitle">
+              Sentuh, geser, dan gosok mainan di bawah ini untuk melihat kejutan isi hatiku...
+            </p>
+          </div>
+
+          <!-- TOY 1: LOVE METER SLIDER -->
+          <div class="interactive-toy-box love-meter-toy">
+            <div class="toy-header">
+              <span class="toy-icon-tag">🎚️ MAINAN 1</span>
+              <h3 class="toy-title">Love Meter: Tingkat Kemarahan vs Kasih Sayang</h3>
+            </div>
+            <p class="toy-desc">
+              Geser bulatan emas di bawah untuk mengecek reaksi hatimu hari ini:
+            </p>
+
+            <div class="meter-status-card">
+              <div class="meter-emoji-display" id="meterEmoji">🥺</div>
+              <h4 class="meter-status-title" id="meterTitle">Mulai Luluh Dikit...</h4>
+              <p class="meter-quote-text" id="meterQuote">"Terima kasih sudah mau mendengarkan keluhanku sayang... Hatiku mulai tenang 🥰"</p>
+            </div>
+
+            <div class="slider-control-bar">
+              <span class="slider-end-label">0% Masih Sebel 😤</span>
+              <input type="range" id="loveSlider" min="0" max="100" value="45" class="luxury-range-slider" oninput="updateLoveMeter(this.value)">
+              <span class="slider-end-label">1000% Sayang Banget 💖</span>
+            </div>
+            <div class="slider-val-badge">
+              <span id="meterPercentBadge">Skor Kasih Sayang: 45%</span>
+            </div>
+          </div>
+
+          <!-- TOY 2: INTERACTIVE SCRATCH CARD -->
+          <div class="interactive-toy-box scratch-card-toy">
+            <div class="toy-header">
+              <span class="toy-icon-tag">🎟️ MAINAN 2</span>
+              <h3 class="toy-title">Kartu Gosok Ajaib: Buka Surat Rahasia</h3>
+            </div>
+            <p class="toy-desc">
+              <i class="fa-solid fa-hand-pointer pulse-hand"></i>
+              Gosok lapisan emas di bawah menggunakan jari (di HP) atau kursor mouse:
+            </p>
+
+            <div class="scratch-card-container">
+              <!-- Underneath Secret Message -->
+              <div class="scratch-under-message">
+                <div class="under-stamp">💌 RAHASIA UNTUK NURUL IMAN</div>
+                <h4 class="under-title">"Bidadariku yang Paling Sabar & Menawan"</h4>
+                <p class="under-body">
+                  "Terima kasih sudah se-sabar ini menghadapiku yang penuh kekurangan. Aku berjanji dengan segenap jiwaku: kamu akan selalu jadi prioritasku yang paling berharga. Senyumanmu adalah bahagiaku selamanya. I love you to the moon and back! 💖🌹"
+                </p>
+                <span class="under-signature">— Yang Selalu Menyayangimu Sepenuh Hati</span>
+              </div>
+
+              <!-- Overlaid Scratch Canvas -->
+              <canvas id="scratchCanvas" width="360" height="200" class="scratch-canvas-foil"></canvas>
+            </div>
+
+            <div class="scratch-tip-row">
+              <span id="scratchTipText"><i class="fa-solid fa-sparkles"></i> Gosok minimal 40% untuk membuka pesan rahasia secara utuh</span>
+              <button class="luxury-ghost-btn btn-sm" onclick="revealScratchNow()">Buka Langsung ✨</button>
+            </div>
+          </div>
+
+          <!-- TOY 3: OFFICIAL APOLOGY CONTRACT WITH DIGITAL WAX STAMP -->
+          <div class="interactive-toy-box contract-toy">
+            <div class="toy-header">
+              <span class="toy-icon-tag">📜 KOMITMEN NYATA</span>
+              <h3 class="toy-title">Surat Pernyataan Resmi Bermaterai Kasih Sayang</h3>
+            </div>
+
+            <div class="contract-parchment-sheet">
+              <div class="contract-crest-header">
+                <i class="fa-solid fa-certificate crest-gold-icon"></i>
+                <h4>SURAT PERJANJIAN & KOMITMEN PERUBAHAN</h4>
+                <small>Dibuat dan Ditandatangani Khusus Untuk: <strong>Nurul Iman</strong></small>
+              </div>
+
+              <div class="contract-clauses-list">
+                <div class="clause-item">
+                  <div class="clause-check"><i class="fa-solid fa-check"></i></div>
+                  <div class="clause-text">
+                    <strong>Pasal 1 — Prioritas Waktu:</strong> Wajib mengutamakan kabar dan waktu berkualitas berdua dengan Nurul Iman dibanding nongkrong berlebihan bersama teman.
+                  </div>
+                </div>
+                <div class="clause-item">
+                  <div class="clause-check"><i class="fa-solid fa-check"></i></div>
+                  <div class="clause-text">
+                    <strong>Pasal 2 — Kendali Emosi & Kelembutan:</strong> Berkomitmen 100% untuk mengontrol emosi, tidak pernah bersikap kasar atau berkata tinggi, serta selalu berbicara lembut.
+                  </div>
+                </div>
+                <div class="clause-item">
+                  <div class="clause-check"><i class="fa-solid fa-check"></i></div>
+                  <div class="clause-text">
+                    <strong>Pasal 3 — Pendengar yang Setia:</strong> Selalu menyediakan waktu luang untuk mendengarkan keluh kesah, cerita harian, dan menjadi tempat bersandar ternyaman bagi Nurul.
+                  </div>
+                </div>
+                <div class="clause-item">
+                  <div class="clause-check"><i class="fa-solid fa-check"></i></div>
+                  <div class="clause-text">
+                    <strong>Pasal 4 — Kasih Sayang Abadi:</strong> Selalu memperlakukan Nurul Iman selayaknya ratu dan bidadari tercantik di semesta tanpa rasa jenuh.
+                  </div>
+                </div>
+              </div>
+
+              <div class="contract-stamp-zone">
+                <div id="contractWaxStamp" class="contract-wax-seal hidden">
+                  <div class="stamp-inner">
+                    <span>MATERAI</span>
+                    <strong>SAH & RESMI</strong>
+                    <small>CINTA NURUL</small>
+                  </div>
+                </div>
+
+                <button id="btnSignContract" class="luxury-gold-btn" onclick="signContract()">
+                  <span class="btn-shine"></span>
+                  <i class="fa-solid fa-feather-pointed"></i>
+                  <span>Sahkan & Bubuhkan Cap Emas Materai</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Navigation -->
+          <div class="card-navigation-row mt-4">
+            <button class="luxury-ghost-btn" onclick="goToStage(4)">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Kembali ke Foto</span>
+            </button>
+            <button class="luxury-gold-btn" onclick="goToStage(6)">
+              <span class="btn-shine"></span>
+              <span>Pertanyaan Paling Penting</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 6: THE ULTIMATE APOLOGY DECISION & RUNAWAY BUTTON TOY
+           ============================================================== -->
+      <section id="stage-6" class="luxury-stage">
+        <div class="luxury-card decision-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          
+          <div class="section-title-wrap">
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>BAB VI &bull; PERTANYAAN PALING PENTING</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text big-question-text">
+              "Nurul Iman Sayang, Maukah Kamu Memaafkanku?"
+            </h2>
+          </div>
+
+          <!-- Centered Symmetrical Portrait Frame -->
+          <div class="portrait-halo-wrapper">
+            <div class="gold-halo-ring">
+              <img src="Assets/Foto/IMG_2178.JPG" alt="Nurul Iman Cantik" class="halo-portrait-img">
+              <span class="gold-leaf-wreath">✦</span>
+            </div>
+            <p class="pleading-quote-text">
+              Aku tahu kesalahanku besar, tapi cintaku dan komitmenku untuk membahagiakanmu jauh lebih besar lagi. Tolong beri aku kesempatan untuk menjadi pria yang lebih sabar dan menjagamu sepenuh hati... 🥺
+            </p>
+          </div>
+
+          <!-- Decision Arena Playground -->
+          <div class="decision-arena-surface" id="decisionArena">
+            <p class="arena-guidance-text" id="arenaTip">
+              Pilihlah dengan hatimu yang paling lembut, bidadariku...
+            </p>
+
+            <div class="decision-actions-row">
+              <!-- YES BUTTON -->
+              <button id="btnForgive" class="luxury-forgive-btn" onclick="goToStage(7)">
+                <span class="btn-shine"></span>
+                <span class="btn-forgive-emoji">🥰</span>
+                <span class="btn-forgive-text">Iya, Aku Maafin Kamu ❤️</span>
+              </button>
+
+              <!-- NO BUTTON (RUNAWAY / CANNOT BE CLICKED) -->
+              <button id="btnReject" class="luxury-runaway-btn" onmouseenter="dodgeButton(event)" onmouseover="dodgeButton(event)" onclick="dodgeButton(event)">
+                <span class="btn-reject-emoji">😤</span>
+                <span class="btn-reject-text" id="rejectBtnText">Nggak, Masih Marah!</span>
+              </button>
+            </div>
+
+            <!-- Humorous Pleading Dialogue Bubble -->
+            <div class="runaway-dialogue-bubble" id="escapeBubble">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span id="escapeMessage">Cobalah klik tombol merah kalau bisa 😜</span>
+            </div>
+          </div>
+
+          <!-- Bottom Navigation -->
+          <div class="card-navigation-row mt-4">
+            <button class="luxury-ghost-btn" onclick="goToStage(5)">
+              <i class="fa-solid fa-arrow-left-long"></i>
+              <span>Kembali</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ==============================================================
+           STAGE 7: CELEBRATION, GOLDEN VOWS & LOVE VOUCHERS
+           ============================================================== -->
+            <!-- ==============================================================
+           STAGE 7: CELEBRATION, GRAND FINALE & WHATSAPP TO 0822394349489
+           ============================================================== -->
+      <section id="stage-7" class="luxury-stage">
+        <div class="luxury-card celebration-master-card">
+          <!-- Ornate Royal Corner Filigree Accents -->
+          <div class="card-corner top-left"></div>
+          <div class="card-corner top-right"></div>
+          <div class="card-corner bottom-left"></div>
+          <div class="card-corner bottom-right"></div>
+
+          <!-- Top Emblem & Celebration Fireworks -->
+          <div class="celebration-top-block">
+            <div class="celebration-lantern-glow">🏮 ✨ 🏮</div>
+            <div class="luxury-emblem">
+              <span class="emblem-line left"></span>
+              <span class="emblem-badge">
+                <i class="fa-solid fa-crown"></i>
+                <span>BAB VII &bull; KEMENANGAN CINTA & PERAYAAN HATI</span>
+              </span>
+              <span class="emblem-line right"></span>
+            </div>
+            <h2 class="section-heading gold-foil-text celebration-heading">
+              "Terima Kasih Banyak, Nurul Iman Bidadari Hatiku! 💖"
+            </h2>
+            <p class="celebration-tagline">
+              Kebaikan dan ketulusan hatimu membuktikan bahwa kamu adalah wanita terhebat dan anugerah terindah di hidupku.
+            </p>
+          </div>
+
+          <!-- Featured Glowing Bidadari Tribute Frame -->
+          <div class="tribute-portrait-wrapper">
+            <div class="tribute-halo-ring">
+              <img src="Assets/Foto/IMG_2175.JPG" alt="Nurul Iman Ratu Hatiku" class="tribute-img">
+              <span class="tribute-gold-crown">👑</span>
+            </div>
+            <div class="tribute-caption">
+              <h4 class="tribute-name">Nurul Iman</h4>
+              <p class="tribute-title">Ratu di Hatiku yang Paling Anggun, Cantik, & Penuh Kasih</p>
+            </div>
+          </div>
+
+          <!-- Piagam Resmi Cinta & Pengampunan -->
+          <div class="forgiveness-certificate-box">
+            <div class="cert-gold-ribbon">
+              <i class="fa-solid fa-ribbon cert-ribbon-icon"></i>
+              <span>PIAGAM PENGAMPUNAN & CINTA SEJATI</span>
+            </div>
+            <div class="cert-inner-content">
+              <p class="cert-opening">Diberikan dengan segenap jiwa dan rasa syukur kepada:</p>
+              <h3 class="cert-recipient-name">Nurul Iman</h3>
+              <p class="cert-body-p">
+                Yang dengan kelapangan hati dan ketulusan jiwanya telah memaafkan segala khilaf, kesibukan, dan kekurangan kekasihnya.
+              </p>
+              <div class="cert-vow-quote">
+                "Mulai hari ini, detik ini, dan selamanya: Senyuman Nurul adalah prioritasku, kebahagiaanmu adalah tujuanku, dan menjagamu dengan kelembutan adalah janji suciku yang abadi."
+              </div>
+              <div class="cert-signatures-row">
+                <div class="cert-sig-block">
+                  <span class="cert-sig-line">Yang Berjanji Setia,</span>
+                  <strong class="cert-sig-name">— Kekasih Hatimu —</strong>
+                </div>
+                <div class="cert-seal-stamp">
+                  <span class="cert-seal-text">SAH &bull; 2026</span>
+                  <span class="cert-seal-heart">💖</span>
+                  <small>CINTA NURUL</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surprise Treat Box -->
+          <div class="treat-surprise-box">
+            <div class="treat-header">
+              <span class="treat-tag">🎁 HADIAH SPESIAL HARI INI</span>
+              <h3 class="treat-title">Kotak Kejutan Cinta Untuk Nurul Iman</h3>
+              <p class="treat-desc">Klik tombol di bawah untuk membuka hadiah spontan yang wajib aku penuhi hari ini:</p>
+            </div>
+            
+            <div class="treat-result-card" id="treatResultCard">
+              <span class="treat-emoji" id="treatEmoji">🍰</span>
+              <h4 class="treat-name" id="treatName">Traktir Makanan Kesukaan Nurul Sepuasnya</h4>
+              <p class="treat-note" id="treatNote">"Pilih tempat makan favoritmu, hari ini aku yang tanggung semuanya!"</p>
+            </div>
+
+            <button class="luxury-gold-btn btn-sm" onclick="spinSurpriseTreat()">
+              <span class="btn-shine"></span>
+              <i class="fa-solid fa-gift"></i>
+              <span>Buka Hadiah Kejutan Lainnya 🎁</span>
+            </button>
+          </div>
+
+          <!-- Redeemable Luxury Love Vouchers -->
+          <div class="vouchers-section-wrap">
+            <div class="vouchers-title-row">
+              <i class="fa-solid fa-ticket-simple voucher-title-icon"></i>
+              <h3>VOUCHER CINTA SPESIAL UNTUK NURUL IMAN</h3>
+              <p class="voucher-sub-caption">Dapat diklaim kapan saja dan berlaku seumur hidup</p>
+            </div>
+
+            <div class="luxury-vouchers-grid">
+              <!-- Ticket 1 -->
+              <div class="luxury-voucher-ticket" onclick="claimVoucher(this, 'Voucher Kencan Berdua Bebas Teman')">
+                <div class="ticket-cutout left"></div>
+                <div class="ticket-cutout right"></div>
+                <div class="ticket-header-strip">
+                  <span class="ticket-type">VIP PASS &bull; KHUSUS NURUL</span>
+                  <span class="ticket-code">#LOVE-01</span>
+                </div>
+                <h4 class="ticket-title">Voucher Kencan Bebas Teman</h4>
+                <p class="ticket-desc">Seharian penuh hanya kita berdua tanpa gangguan game atau kumpul teman.</p>
+                <div class="ticket-action-pill">
+                  <span class="ticket-claim-button">Ketuk Untuk Klaim ✦</span>
+                </div>
+              </div>
+
+              <!-- Ticket 2 -->
+              <div class="luxury-voucher-ticket" onclick="claimVoucher(this, 'Voucher Peluk Hangat & Curhat 24 Jam')">
+                <div class="ticket-cutout left"></div>
+                <div class="ticket-cutout right"></div>
+                <div class="ticket-header-strip">
+                  <span class="ticket-type">UNLIMITED &bull; HANGAT</span>
+                  <span class="ticket-code">#LOVE-02</span>
+                </div>
+                <h4 class="ticket-title">Voucher Peluk & Curhat 24 Jam</h4>
+                <p class="ticket-desc">Waktu tanpa batas untuk mendengarkan curhat dan memelukmu saat kamu lelah.</p>
+                <div class="ticket-action-pill">
+                  <span class="ticket-claim-button">Ketuk Untuk Klaim ✦</span>
+                </div>
+              </div>
+
+              <!-- Ticket 3 -->
+              <div class="luxury-voucher-ticket" onclick="claimVoucher(this, 'Voucher Permintaan Khusus Dituruti')">
+                <div class="ticket-cutout left"></div>
+                <div class="ticket-cutout right"></div>
+                <div class="ticket-header-strip">
+                  <span class="ticket-type">GOLDEN TICKET &bull; RATU</span>
+                  <span class="ticket-code">#LOVE-03</span>
+                </div>
+                <h4 class="ticket-title">Voucher Permintaan Dituruti</h4>
+                <p class="ticket-desc">1 keinginan apapun dari Nurul Iman hari ini wajib aku kabulkan tanpa bantah.</p>
+                <div class="ticket-action-pill">
+                  <span class="ticket-claim-button">Ketuk Untuk Klaim ✦</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- THE PROMINENT WHATSAPP BUTTON DIRECT TO 0822394349489 -->
+          <div class="whatsapp-reassurance-box grand-wa-box">
+            <div class="wa-badge-pulse">
+              <i class="fa-solid fa-heart-pulse"></i>
+              <span>LANGKAH TERAKHIR &bull; SAMPAIKAN KABAR BAIKMU</span>
+            </div>
+            <h3 class="wa-title">Kabari Aku Bahwa Kamu Sudah Memaafkanku 💬</h3>
+            <p class="wa-desc">
+              Sentuh tombol hijau di bawah ini untuk mengirim pesan langsung ke WhatsApp nomor <strong>0822-3943-49489</strong>. Aku sudah tidak sabar ingin memeluk dan mentraktir bidadariku hari ini!
+            </p>
+            
+            <a id="whatsappBtn" href="https://api.whatsapp.com/send?phone=62822394349489&text=Halo%20sayangku...%20%E2%9D%A4%EF%B8%8F%0A%0AAku%20udah%20buka%20dan%20baca%20semua%20isi%20website%20permintaan%20maafmu%20untuk%20Nurul%20Iman.%20Aku%20tersentuh%20banget%20dengan%20ketulusanmu%20dan%20aku%20udah%20maafin%20kamu%20%F0%9F%A5%B0%0A%0ATapi%20ingat%20janjimu%20ya%3A%20Prioritaskan%20waktu%20buat%20aku%2C%20kontrol%20emosimu%2C%20dan%20selalu%20berbicara%20dengan%20lembut!%20Sekarang%20giliran%20kamu%20tepatin%20janjimu%20dan%20traktir%20aku!%20%F0%9F%8C%B8%F0%9F%92%8D" target="_blank" class="luxury-whatsapp-cta grand-whatsapp-btn pulse-glow">
+              <div class="wa-btn-inner">
+                <i class="fa-brands fa-whatsapp wa-brand-icon"></i>
+                <div class="wa-btn-text-col">
+                  <span class="wa-main-text">Kirim Pesan Maaf & Sayang ke WhatsApp</span>
+                  <span class="wa-sub-number">0822-3943-49489 &bull; Chat Langsung</span>
+                </div>
+                <i class="fa-solid fa-arrow-right-long wa-arrow"></i>
+              </div>
+            </a>
+          </div>
+
+          <!-- Reset / Replay Journey -->
+          <div class="card-navigation-row mt-4">
+            <button class="luxury-ghost-btn" onclick="resetToBeginning()">
+              <i class="fa-solid fa-rotate-left"></i>
+              <span>Buka Kembali Dari Awal</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Photo Modal Lightbox -->
+  <div id="photoModal" class="luxury-photo-modal" onclick="closePhotoModal()">
+    <div class="photo-modal-card" onclick="event.stopPropagation()">
+      <button class="modal-dismiss-btn" onclick="closePhotoModal()">&times;</button>
+      <button class="modal-nav-btn prev" onclick="navigatePhoto(-1)" aria-label="Foto Sebelumnya">&#10094;</button>
+      <button class="modal-nav-btn next" onclick="navigatePhoto(1)" aria-label="Foto Selanjutnya">&#10095;</button>
+      <img id="modalImg" src="" alt="Nurul Iman">
+      <div class="modal-caption-area">
+        <div class="modal-title-row">
+          <h4 id="modalCaption">Foto</h4>
+          <span id="modalCounter" class="modal-counter-badge">1 / 34</span>
+        </div>
+        <span>Nurul Iman yang paling menawan 🌸</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Bar Notification -->
+  <div id="toastNotification" class="luxury-toast-bar"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
